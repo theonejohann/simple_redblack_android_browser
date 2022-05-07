@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#202020">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_corner"
+        android:id="@+id/input_fields">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_link_24"
+            android:id="@+id/link_icon"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/cancel_button"
+            android:layout_toEndOf="@+id/link_icon"
+            android:background="@null"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_centerVertical="true"
+            android:textColorHint="#F00"
+            android:hint="Search or Type URL"
+            android:id="@+id/url_input"
+            android:inputType="textUri"
+            android:imeOptions="actionGo"
+            android:singleLine="true"/>
+
+        <ImageView
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_cancel_24" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_below="@id/input_fields"
+        android:id="@+id/divider_1"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_below="@+id/input_fields"
+        android:visibility="invisible"/>
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider_1"
+        android:layout_above="@+id/divider_2"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:id="@+id/divider_2"
+        android:layout_above="@+id/bottom_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_layout"
+        android:orientation="horizontal"
+        android:background="#202020"
+        android:gravity="center"/>
+
+
+</RelativeLayout>
